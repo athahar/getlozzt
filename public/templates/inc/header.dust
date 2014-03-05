@@ -1,0 +1,10 @@
+<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">        
+        <li>
+          <a href="/destinations">Destinations</a>
+        </li>
+        <li>
+          <a href="/adddestination">Add destination</a>
+        </li>        
+      </ul>      
+    </nav>

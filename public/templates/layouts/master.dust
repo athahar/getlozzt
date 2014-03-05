@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <title>{+title /}</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
 <div id="wrapper">
+	{>"inc/header" /}
     {+body /}
 </div>
 <script data-main="js/app" src="components/requirejs/require.js"></script>

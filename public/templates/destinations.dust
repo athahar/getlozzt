@@ -1,0 +1,40 @@
+
+{>"layouts/master" /}
+{<title}
+    Destination Editor
+{/title}
+
+{<body}
+    
+    <main role="main">
+        <div class="destinations container">        
+            {?destinations}
+                <legend>Destinations</legend>
+                <ul class="nm-np inline list-unstyled">
+                    {#destinations}
+                        <li class="well">
+                            <form method="POST" action="/destination">
+                                <input type="hidden" name="destinationId" value="{.id}">
+
+                                <h3 class="nm-np">{.name}</h3> 
+                                <p class="nm-np">{.desc}</p>
+                                <p class="nm-np">{.title}</p>
+                                <p class="nm-np">{.location}</p>    
+                                <br>
+                                <input type="submit" value="Delete">
+                                <!--If we don't at the Cross-Site Request Forgey token, this POST will be rejected-->
+                                <input type="hidden" name="_csrf" value="{_csrf}">
+                                <a href="/destination/{.id}">View More</a>
+                                <input type="hidden" name="_method" value="DELETE">
+                            </form>
+                        </li>
+                    {/destinations}
+                </ul>
+                
+            {:else}
+                There are no destinations :(
+            {/destinations}
+        </div>
+
+    </main>
+{/body}

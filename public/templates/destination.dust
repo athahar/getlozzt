@@ -1,0 +1,36 @@
+
+{>"layouts/master" /}
+{<title}
+    Destination Editor
+{/title}
+
+{<body}
+    
+    <main role="main">        
+        <div class="container">
+            {#destination}
+            <h2>{.name}</h2>
+            <div class="mb2">                        
+                <form method="POST" action="/destination">
+                    <input type="hidden" name="item_id" value="{.id}">
+
+                    <h3 class="nm-np">{.name}</h3> 
+                    <a href="/destination/edit/{.id}">edit</a> 
+                    <button type="button" class="btn btn-primary">Delete</button>
+                    <p class="nm-np">{.desc}</p>
+                    <p class="nm-np">{.title}</p>
+                    <p class="nm-np">{.location}</p>
+                    <img class="destinationPhoto" src="{.photoUrl}" alt="{.title}"/>
+                    <br>
+                    
+                    <!--If we don't at the Cross-Site Request Forgey token, this POST will be rejected-->
+                    <input type="hidden" name="_csrf" value="{_csrf}">
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
+                
+            </div>
+            {/destination}
+         </div>   
+    </main>
+    
+{/body}

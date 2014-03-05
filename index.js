@@ -2,10 +2,17 @@
 
 
 var kraken = require('kraken-js'),
+    db = require('./lib/database'),
+    //language = require('./lib/language'),
+    express = require('express'),
     app = {};
 
 
 app.configure = function configure(nconf, next) {
+
+    // db config
+    db.config(nconf.get('databaseConfig'));
+    
     // Async method run on startup.
     next(null);
 };
@@ -18,6 +25,7 @@ app.requestStart = function requestStart(server) {
 
 app.requestBeforeRoute = function requestBeforeRoute(server) {
     // Run before any routes have been added.
+    server.use(express.methodOverride());
 };
 
 

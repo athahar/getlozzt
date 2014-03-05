@@ -1,6 +1,10 @@
 {
-// "host": "localhost",
-//
+	"host": "localhost",	
+	"databaseConfig" : {
+		"host": "localhost",
+		"database" : "destinations"
+	}
+
 // "port": 8000,
 //
 // "i18n": {
