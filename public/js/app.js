@@ -2,12 +2,14 @@
 
 
 
-require(['config' /*, Dependencies */], function (config) {
+require(['config', 'app/destination'], function (config, Destination) {
 
     var app = {
         initialize: function () {
             // Your code here
-            console.log("UI Code loaded");
+
+            var destinationView = new Destination()
+
         }
     };
 
